@@ -1,0 +1,40 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>All</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<style type="text/css">
+		.col-sm-4{
+			height:400px; 
+		}		
+		h4,p{
+			height:100px; 
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<h1>Usefull Files</h1>
+	
+		<div class="row">
+			<div class="col-sm-4" style="background-color: lavender;">
+				<div class="">
+					<h4 class="">Multy Part File</h4>
+					<p class="">To load all the type of file in the browser</p>
+					<a th:href="@{/loginProcess/multyPartFile}" class="btn btn-primary">MultiPartFile</a>
+				</div>
+			</div>
+			<div class="col-sm-4" style="background-color: lavenderblush;">
+				<div class="">
+					<h4 class="">Ajax To be Done</h4>
+					<p class="">*****************************</p>
+					<a th:href="@{/loginProcess/ajaxCall}" class="btn btn-primary">Ajax Call</a>
+				</div>
+			</div>
+			<div class="col-sm-4" style="background-color: lavender;">New</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+             
+    <persistence-unit name="pva" transaction-type="RESOURCE_LOCAL">
+        <non-jta-data-source>jdbc/portal</non-jta-data-source>
+         <mapping-file>config/jpa/UserDetails.orm.xml</mapping-file>
+        <class>base.bobvic.domain.UserImpl</class>
+        
+        <exclude-unlisted-classes/>
+        <properties>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.transaction.flush_before_completion" value="false"/>
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
+            <property name="hibernate.generate_statistics" value="false" />
+            <property name="hibernate.archive.autodetection" value="false" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.id.new_generator_mappings" value="true"/>
+            <property name="hibernate.id.optimizer.pooled.prefer_lo" value="true"/>
+        </properties>
+    </persistence-unit>
+    
+</persistence>

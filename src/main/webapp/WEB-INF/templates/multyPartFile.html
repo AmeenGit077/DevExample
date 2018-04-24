@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Multy Part File</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<style type="text/css">
+		body{
+	background: #401722e6;
+	}
+	.bor{
+	margin: 0 auto;
+	background:white;
+	border: 1px solid threedlightshadow;
+	margin: 100px 500px;
+	padding: 50px 60px;
+	}
+	</style>
+</head>
+<body>
+	<div class="bor">
+		<div class="col-sm-12 col-xs-12 ">
+			<form th:action="@{/loginProcess/multyPartFile/process}" method="post" enctype="multipart/form-data">
+				<label class="btn btn-bs-file " style="margin-bottom: 10px;"> Browse 
+					<input type="file" class="form-control" name="mpartfile" style="display: none;"/>
+				</label>
+				<button type="submit" class="btn" style="margin-bottom: 10px;">Upload</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

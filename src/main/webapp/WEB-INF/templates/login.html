@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<th:block th:replace="/partials/head"></th:block>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<style type="text/css">
+body {
+	background: #401722e6;
+}
+
+.bor {
+	margin: 0 auto;
+	background: white;
+	border: 1px solid threedlightshadow;
+	margin: 50px 450px;
+	padding: 25px 25px;
+}
+</style>
+</head>
+
+<body ng-app="myApp">
+	<div class="bor">
+		<div class="loginForm">
+			<form th:action="@{/loginProcess}" method="post">
+				<label> User Name </label> <input type="text" class="form-control"
+					name="uname" /> <label> Password</label> <input type="password"
+					class="form-control" name="pwd" style="margin-bottom: 10px;" /> <input
+					type="submit" value="Submit" class="btn" />
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>

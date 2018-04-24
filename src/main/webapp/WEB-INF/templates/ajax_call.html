@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Multy Part File</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	
+	<style type="text/css">
+		body{
+	background: #401722e6;
+	}
+	.bor{
+	margin: 0 auto;
+	background:white;
+	border: 1px solid threedlightshadow;
+	margin: 50px 400px;
+	padding: 25px 25px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="">
+		<div class="col-sm-12 col-xs-12 bor" >
+			
+					<table style="width:100%">
+						<tr>
+						    <th>Firstname</th>
+						</tr>
+						<tr th:each="lData : *{listData}">
+						    <td>
+						    	<form th:action="@{/loginProcess/process/} + ${lData}" method="post">
+        							<button class="btn" type="submit" name="removeRow" th:value="${lData}">Remove row</button>
+        						</form>
+      						</td>
+						</tr>
+						<!-- <tr th:each="lData : *{listData}">
+						    <td class="btn"><a th:href="@{/loginProcess/process/(${lData})}">click </a></td>
+						</tr> -->
+						<!-- <tr th:each="lData : *{listData}">
+						    <td th:text="${lData}" th:value="${lData}" name="listDatas" id="listDatas"></td>
+						    <button onclick="mothod(listDatas)">click</button>
+						</tr> -->
+					</table>
+			
+		</div>
+	</div>
+	<div style="display: none"><a id="urlfilteropt" th:href="@{/log/process}"></a></div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript">
+	//<![CDATA[
+	
+	function mothod(listDatas) {
+		var url = $("#urlfilteropt").attr('href');
+		alert(url);
+		var userId = $("#listDatas").val();/* ByName("listDatas").tagName; */ 
+		alert(userId);
+		if(typeof userId == 'undefined'){
+			userId = null;
+		}
+  		
+		if(optId!=null){
+			$http: $.ajax({
+				url : url + '/'+ userId,
+			   	error: function(e){
+		    		alert("error");
+		    	}
+			}); 
+		}
+ 	}
+    
+	// ]]>	
+  	</script>
+
+</body>
+</html>
